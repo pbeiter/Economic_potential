@@ -6,6 +6,10 @@ import json, urllib2
 
 pd.options.display.mpl_style = 'default'
 
+#modification
+v=5
+
+
 ### Data load-in 
 df = pd.read_csv('C:\Users\Philipp\Python_learning\Economic potential\supply curve.csv')
 df1 = pd.read_csv('C:\Users\Philipp\Python_learning\Economic potential\costs.csv')
