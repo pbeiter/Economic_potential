@@ -4,6 +4,8 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import json, urllib2
 
+#import choropleth_map as map
+
 pd.options.display.mpl_style = 'default'
 
 ### Data read-in 
@@ -47,7 +49,7 @@ plt.ylabel('Net value (in $/MWh)', fontsize=15, fontname='Tahoma', color='black'
 plt.title('Net value supply curve', fontsize=20, fontname='Tahoma')
 plt.show(block=True)
 
-
+### Choropleth map ###
 
 
 
