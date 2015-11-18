@@ -3,8 +3,7 @@ git config --global user.name "your-name"
 
 git config --global user.email "your-email"
 
-To check if Git is already config-ed you can type git config --list
-
+git config --list // to check if Git is already configured 
 
 
 
@@ -24,3 +23,4 @@ git push -u origin master
 
 
 git clone git@github.com:pbeiter/Economic_potential.git
+
