@@ -4,14 +4,13 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import json, urllib2
 
-#import choropleth_map as map
-#slight modification
+#TO DO: import choropleth_map as map
 
 pd.options.display.mpl_style = 'default'
 
 ### Data read-in 
-df = pd.read_csv('C:\Users\Philipp\Python_learning\Economic potential\supply curve.csv')
-df1 = pd.read_csv('C:\Users\Philipp\Python_learning\Economic potential\costs.csv')
+df = pd.read_csv("supply curve.csv")
+df1 = pd.read_csv("costs.csv")
 print(df.dtypes)
 
 # Variable definition
