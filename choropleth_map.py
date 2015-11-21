@@ -4,7 +4,7 @@ import pandas as pd
 #plotly_ssl_verification = False , plotly_ssl_verification
 py.sign_in("pbeiter","1ygvgjoipe",plotly_ssl_verification=False)
 
-#df = pd.read_csv('State_data.csv')
+df = pd.read_csv('state_data.csv')
 
 for col in df.columns:
     df[col] = df[col].astype(str)
@@ -47,4 +47,4 @@ layout = dict(
 fig = dict( data=data, layout=layout )
 py.image.save_as(fig, filename='US_map.png')
 
-url = py.plot( fig, filename='d3-cloropleth-map' )
+#url = py.plot( fig, filename='d3-cloropleth-map' )
