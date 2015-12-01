@@ -1,4 +1,9 @@
 *.ipynb_checkpoints/
+*.pyc
 *.png
+
+output.csv
+LACE_output.csv
+
 
 
