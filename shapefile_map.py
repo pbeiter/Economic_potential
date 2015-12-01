@@ -23,7 +23,7 @@ import pysal.esda.mapclassify as mapclassify
 import Economic_potential_master as epm
 
 ### IPython notebook setup
-%matplotlib inline
+#%matplotlib inline
 
 ### Data read-in 
 data = epm.df_state_results
