@@ -31,7 +31,7 @@ data.head()
 
 ### Shapefile modification
 #load shape file as shp 
-shp = fiona.open('Shapefiles_US_states/nws_15/s_10nv15.shp')
+shp = fiona.open('shapefiles_US_states/nws_15/s_10nv15.shp')
 
 #access the boundaries (the 2 lat,long pairs) using shp.bounds
 bds = shp.bounds
@@ -84,7 +84,7 @@ m = Basemap(
 
 m.readshapefile(
     #provide the path to the shapefile, but leave off the .shp extension
-    'Shapefiles_US_states/nws_15/s_10nv15',
+    'shapefiles_US_states/nws_15/s_10nv15',
 
     #name your map 
     'us_states',
