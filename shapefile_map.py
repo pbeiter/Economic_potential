@@ -31,6 +31,7 @@ data.head()
 
 ### Shapefile modification
 #load shape file as shp 
+# Source for U.S. states shapefile: NWS GIS map group (http://www.nws.noaa.gov/geodata/catalog/national/html/us_state.htm) 
 shp = fiona.open('shapefiles_US_states/nws_15/s_10nv15.shp')
 
 #access the boundaries (the 2 lat,long pairs) using shp.bounds
