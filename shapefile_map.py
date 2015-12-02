@@ -32,7 +32,7 @@ data.head()
 ### Shapefile modification
 #load shape file as shp 
 # Source for U.S. states shapefile: NWS GIS map group (http://www.nws.noaa.gov/geodata/catalog/national/html/us_state.htm) 
-shp = fiona.open('shapefiles_US_states/nws_15/s_10nv15.shp')
+shp = fiona.open('shapefiles_US_states/GADM_US_adm/USA_adm1.shp')
 
 #access the boundaries (the 2 lat,long pairs) using shp.bounds
 bds = shp.bounds
@@ -85,30 +85,30 @@ m = Basemap(
 
 m.readshapefile(
     #provide the path to the shapefile, but leave off the .shp extension
-    'shapefiles_US_states/nws_15/s_10nv15',
+    'shapefiles_US_states/GADM_US_adm/USA_adm1',
 
     #name your map 
-    'us_states',
+    'states',
 
     #set the default shape boundary coloring (default is black) and the zorder (layer order)
     color='none',
     zorder=2)
 	
-print 'm.us_states is a ' + str(type(m.us_states)) + ' object.'
+print 'm.states is a ' + str(type(m.states)) + ' object.'
 
-print 'It contains ' + str(len(m.us_states)) + ' items.'
+print 'It contains ' + str(len(m.states)) + ' items.'
 
-print 'The first list item itself contains ' + str(len(m.us_states[0])) + ' items.'
+print 'The first list item itself contains ' + str(len(m.states[0])) + ' items.'
 
-m.us_states_info[0]
+m.states_info[0]
 
 ### Set up a map dataframe
 df_map = pd.DataFrame({
 
-    #access the x,y coords and define a polygon for each item in m.us_states
-    'poly': [Polygon(xy) for xy in m.us_states],
+    #access the x,y coords and define a polygon for each item in m.states
+    'poly': [Polygon(xy) for xy in m.states],
     #conver NAME_1 to a column called 'district'
-    'State_abbrev': [district['STATE'] for district in m.us_states_info]})
+    'State': [district['NAME_1'] for district in m.states_info]})
 
 #add the polygon area
 df_map['area_m'] = df_map['poly'].map(lambda x: x.area/1000)
@@ -123,7 +123,7 @@ data.head()
 
 ### Merge data with map file
 
-df_map = pd.merge(df_map, data, on='State_abbrev', how='left')
+df_map = pd.merge(df_map, data, on='State', how='left')
 
 df_map.head()
 
@@ -302,7 +302,7 @@ m.drawmapscale(
 plt.tight_layout()
 
 # define the size of the figure
-fig.set_size_inches(10,12)
+fig.set_size_inches(20,24)
 
 # save the figure. Increase the dpi to increase the quality of the output .png. For example, dpi=1000 is super high quality
 

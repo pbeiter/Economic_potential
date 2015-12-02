@@ -78,7 +78,7 @@ df = df.merge(df1, on=['re_class'], how='left')
 df = df.merge(df_state_abbrev,on=['State'],how='left')
 df = df.merge(LACE.LACE_calc, on=['ReEDS region'], how='left')
 
-df_state_results = pd.concat([df['State_abbrev'], df['state_results']], axis=1).drop_duplicates().reset_index(drop=True)
+df_state_results = pd.concat([df['State'], df['State_abbrev'], df['state_results']], axis=1).drop_duplicates().reset_index(drop=True)
 df_state_results = df_state_results.sort_values('State_abbrev', ascending=True, inplace=False, kind='quicksort')
 
 ### National
